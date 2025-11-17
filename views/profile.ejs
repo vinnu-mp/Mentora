@@ -1,0 +1,96 @@
+<%- include("partials/navbar") %>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <div class="page-content">
+        <main class="profile-container">
+
+            <section class="profile-details-card">
+                <div class="profile-header">
+                    <div class="profile-picture-wrapper">
+                        <img src="/images/avatar.png" alt="User Profile Picture" class="profile-picture">
+                        <span class="edit-btn">✎</span>
+                    </div>
+                    <h2>
+                        <%= user.name %>
+                    </h2>
+                    <p class="role-tag">Member Since: <%= user.joinDate %>
+                    </p>
+                </div>
+
+                <div class="details-list">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span class="label">Email:</span>
+                        <span class="value">
+                            <%= user.email %>
+                        </span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🎂</span>
+                        <span class="label">Age:</span>
+                        <span class="value">
+                            <%= user.age %>
+                        </span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🚻</span>
+                        <span class="label">Gender:</span>
+                        <span class="value">
+                            <%= user.gender %>
+                        </span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span class="label">Location:</span>
+                        <span class="value">
+                            <%= user.location %>
+                        </span>
+                    </div>
+                </div>
+
+                <button class="update-profile-btn">Update Profile</button>
+            </section>
+
+            <section class="mental-report-card">
+                <div class="report-header">
+                    <h3>Weekly Mental Wellness Report</h3>
+                    <span class="report-date">Nov 11 - Nov 17, 2025</span>
+                </div>
+
+                <div class="report-metrics">
+                    <div class="metric-box">
+                        <h4>Average Mood Score</h4>
+                        <p class="metric-value mood-positive">8.2 / 10</p>
+                    </div>
+                    <div class="metric-box">
+                        <h4>Therapy Sessions</h4>
+                        <p class="metric-value">2</p>
+                    </div>
+                    <div class="metric-box">
+                        <h4>AI Chat Interactions</h4>
+                        <p class="metric-value">15</p>
+                    </div>
+                </div>
+
+                <div class="report-visuals-grid">
+                    <div class="chart-container">
+                        <h4 class="chart-title">Mood Fluctuation</h4>
+                        <div class="chart-placeholder">
+                            <img src="/images/mood.png" alt="moood">
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h4 class="chart-title">Sleep Quality vs. Stress</h4>
+                        <div class="chart-placeholder">
+                            <img src="/images/stress.png" alt=" stress">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="report-footer">
+                    **Tip:** Consistent use of mindfulness techniques improved your score by **+5%** this week.
+                </p>
+            </section>
+
+        </main>
+    </div>

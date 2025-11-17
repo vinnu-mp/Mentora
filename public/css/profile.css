@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #b1cefd, #caeeff);
+  color: #333;
+}
+
+.page-content {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Profile Details Card */
+.profile-details-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.profile-picture-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-picture {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #27ae60;
+  transition: transform 0.3s;
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+}
+
+.edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #27ae60;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.edit-btn:hover {
+  background: #2ecc71;
+}
+
+.profile-header h2 {
+  margin: 15px 0 5px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.role-tag {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Details List */
+.details-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.detail-item {
+  flex: 1 1 45%;
+  background: #f7f9fb;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.detail-item:hover {
+  transform: translateY(-3px);
+  background: #eaf6f1;
+}
+
+.detail-item .icon {
+  font-size: 1.3rem;
+}
+
+.detail-item .label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-item .value {
+  color: #2c3e50;
+  flex: 1;
+  text-align: right;
+}
+
+/* Update Profile Button */
+.update-profile-btn {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  background: #27ae60;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.update-profile-btn:hover {
+  background: #2ecc71;
+  transform: translateY(-3px);
+}
+
+/* Mental Report Card */
+.mental-report-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mental-report-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.report-header h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+}
+
+.report-date {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Report Metrics */
+.report-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.metric-box {
+  flex: 1 1 30%;
+  background: #f7f9fb;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.metric-box:hover {
+  transform: translateY(-3px);
+  background: #eaf6f1;
+}
+
+.metric-box h4 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.metric-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.mood-positive {
+  color: #27ae60;
+}
+
+/* Report Visuals Grid */
+.report-visuals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  flex: 1 1 45%;
+  background: #f7f9fb;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.chart-container:hover {
+  transform: translateY(-3px);
+  background: #eaf6f1;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background: #dfe7ed;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Report Footer */
+.report-footer {
+  font-size: 0.95rem;
+  color: #555;
+  background: #f7f9fb;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-style: italic;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Mentora - Signup</title>
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Create Account ✨</h2>
+            <p class="subtitle">Join Mentora today</p>
+
+            <!-- Success/Error Messages -->
+            <% if (typeof success !=='undefined' ) { %>
+                <p class="success-message">
+                    <%= success %>
+                </p>
+                <% } %>
+                    <% if (typeof error !=='undefined' ) { %>
+                        <p class="error-message">
+                            <%= error %>
+                        </p>
+                        <% } %>
+
+                            <form action="/auth/register" method="POST">
+                                <input type="text" name="name" placeholder="Full name" required />
+                                <input type="email" name="email" placeholder="Email address" required />
+                                <input type="password" name="password" placeholder="Password" required />
+                                <button type="submit" class="btn">Signup</button>
+                            </form>
+
+                            <p class="redirect">
+                                Already have an account? <a href="/login">Login</a>
+                            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

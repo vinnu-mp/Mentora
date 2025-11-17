@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Chat Container */
+.chat-container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+  padding: 20px;
+  background: #27ae60;
+  color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.chat-header h2 {
+  margin: 0 0 5px 0;
+}
+
+.chat-header p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Chat History */
+.chat-history {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f0f3f7;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  max-width: 75%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #27ae60;
+  color: #fff;
+  border-bottom-right-radius: 0;
+}
+
+.ai-message {
+  align-self: flex-start;
+  background: #e2e8f0;
+  color: #333;
+  border-bottom-left-radius: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat Input Section */
+.chat-input-section {
+  display: flex;
+  padding: 15px 20px;
+  background: #f7f9fb;
+  border-top: 1px solid #ddd;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+#chat-input:focus {
+  border-color: #27ae60;
+}
+
+#send-btn {
+  margin-left: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  background: #27ae60;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#send-btn:hover {
+  background: #2ecc71;
+  transform: translateY(-2px);
+}
+
+/* Scrollbar styling */
+.chat-history::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-history::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
