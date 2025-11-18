@@ -41,6 +41,7 @@ app.get("/login", (req, res) => {
     success: req.query.success,
   });
 });
+
 app.get("/signup", (req, res) => {
   res.render("signup", {
     error: req.query.error,
@@ -55,10 +56,11 @@ app.post("/signup", (req, res) => {
 
 app.get("/profile", (req, res) => {
   const user = {
-    name: "John Doe",
-    email: "john@example.com",
+    name: "Varun",
+    email: "varun8855@gmail.com",
     age: 21,
     gender: "Male",
+    location: "Bangalore, India",
     weeklyReport:
       "You had a balanced week. Anxiety levels decreased compared to last week and mood stability improved.",
   };

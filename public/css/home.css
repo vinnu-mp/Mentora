@@ -14,6 +14,48 @@ body {
   right: 150px;
 }
 
+/* Bottom-right arrow bubble */
+.ai-pointer {
+  position: fixed;
+  right: 90px;
+  bottom: 25px;
+  background: linear-gradient(135deg, #bc74ff, #f25fff);
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+}
+
+/* The arrow pointing to the chat button */
+.ai-pointer .arrow {
+  width: 0;
+  height: 0;
+  border-left: 14px solid #13d21a; /* arrow color */
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* The AI chat button */
+.ai-chat-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20;
+  padding: 12px 18px;
+  background: #00b4a6;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  z-index: 1000;
+}
+
 /* Container */
 .home-container {
   max-width: 1000px;

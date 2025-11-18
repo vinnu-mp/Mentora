@@ -234,12 +234,19 @@ body {
   margin-bottom: 15px;
   color: #2c3e50;
 }
+.inimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .chart-placeholder {
   height: 200px;
   background: #dfe7ed;
   border-radius: 8px;
   display: flex;
+  width: 40%;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   color: #555;
