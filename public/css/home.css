@@ -7,13 +7,22 @@ body {
   line-height: 1.7;
 }
 
+.arrow {
+  color: black;
+  display: fixed;
+  bottom: 30px;
+  right: 150px;
+}
+
 /* Container */
 .home-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 50px 20px;
 }
-
+.image {
+  scale: 0.5;
+}
 /* Hero Section */
 .hero-section {
   text-align: center;

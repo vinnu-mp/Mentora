@@ -11,11 +11,12 @@
     <body>
 
         <div class="home-container">
-
+            <div class="arrow">
+                <h1></h1>
+            </div>
             <!-- Hero Section -->
             <section class="hero-section">
-                <h1>Breathe & Center</h1>
-                <p class="subtitle">The Foundation for a Calm Mind</p>
+                <img src="/images/mentora.png" alt="" class="image">
             </section>
 
             <!-- Quotes Section -->
@@ -34,6 +35,8 @@
                     <span>— Carla H. Speads</span>
                 </blockquote>
             </section>
+
+
 
             <!-- Content Section -->
             <section class="content-section">
@@ -56,6 +59,111 @@
             </section>
 
         </div>
+        <!-- Layan AI Chatbot Widget -->
+        <script>
+            (function () {
+                var chatbotId = '306a3285-dcf5-402d-9296-3be4da79350e';
+                var widgetUrl = 'https://layan.app/widget?id=' + chatbotId;
 
+                function initChatbot() {
+                    var container = document.createElement('div');
+                    container.id = 'layan-chatbot-' + chatbotId;
+                    container.style.cssText = 'position:fixed;bottom:0;right:0;z-index:9998;';
+
+                    var isOpen = false;
+
+                    document.body.appendChild(container);
+
+                    var isOpen = false;
+                    var button = null;
+
+                    // Preload iframe immediately (hidden) for instant display
+                    var iframe = document.createElement('iframe');
+                    iframe.src = widgetUrl;
+                    iframe.setAttribute('title', 'AI Chatbot');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox');
+
+                    // Function to update iframe styles based on screen size
+                    function updateIframeStyles() {
+                        var isMobile = window.innerWidth <= 768;
+                        if (isMobile) {
+                            iframe.style.cssText = 'position:fixed !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important;height:100dvh !important;border:none !important;z-index:9999 !important;display:' + (isOpen ? 'block' : 'none') + ' !important;';
+                        } else {
+                            iframe.style.cssText = 'position:fixed;bottom:90px;right:20px;width:400px;height:600px;border:none;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:9999;max-width:calc(100vw - 40px);max-height:calc(100vh - 120px);display:' + (isOpen ? 'block' : 'none') + ';';
+                        }
+                    }
+
+                    updateIframeStyles();
+                    window.addEventListener('resize', updateIframeStyles);
+
+                    container.appendChild(iframe);
+
+                    // Create floating chat button (initially hidden)
+                    button = document.createElement('button');
+                    button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+                    button.style.cssText = 'position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:30px;background:linear-gradient(135deg,#1e3a8a 0%,#3b82f6 100%);color:white;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,0.4);z-index:10000;display:none;align-items:center;justify-content:center;transition:transform 0.2s,box-shadow 0.2s;opacity:0;touch-action:manipulation;';
+                    button.setAttribute('aria-label', 'Open chat');
+
+                    button.onmouseover = function () {
+                        button.style.transform = 'scale(1.1)';
+                        button.style.boxShadow = '0 6px 20px rgba(59,130,246,0.6)';
+                    };
+                    button.onmouseout = function () {
+                        button.style.transform = 'scale(1)';
+                        button.style.boxShadow = '0 4px 12px rgba(59,130,246,0.4)';
+                    };
+
+                    button.onclick = function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var isMobile = window.innerWidth <= 768;
+                        isOpen = !isOpen;
+                        updateIframeStyles();
+
+                        if (isOpen) {
+                            if (isMobile) {
+                                button.style.display = 'none';
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                            }
+                        } else {
+                            button.style.display = 'flex';
+                            document.body.style.overflow = '';
+                            button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+                        }
+                    };
+
+                    // Listen ONLY for explicit close messages from the close button inside iframe
+                    window.addEventListener('message', function (event) {
+                        if (event.data === 'closeChatWidget' && event.origin.indexOf('https://layan.app') === 0) {
+                            console.log('Received close message from widget');
+                            isOpen = false;
+                            updateIframeStyles();
+                            button.style.display = 'flex';
+                            document.body.style.overflow = '';
+                            button.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+                        }
+                    });
+
+                    container.appendChild(button);
+
+                    // Show button only after iframe is loaded
+                    iframe.onload = function () {
+                        button.style.display = 'flex';
+                        setTimeout(function () {
+                            button.style.opacity = '1';
+                        }, 50);
+                    };
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initChatbot);
+                } else {
+                    initChatbot();
+                }
+            })();
+        </script>
     </body>
     </div>

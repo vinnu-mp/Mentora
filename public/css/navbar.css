@@ -24,12 +24,15 @@
   align-items: center;
   gap: 12px;
 }
+.nav-left img {
+  border-radius: 20% 20% 20% 20%;
+}
 
 .logo {
   height: 40px;
   width: 40px;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 20% 20% 20% 20%;
   padding-left: 30px;
 }
 
